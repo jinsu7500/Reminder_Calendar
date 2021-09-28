@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>201601823 박진수 리마인더</title>
+    <link href="calendar.css" rel="stylesheet">
+    <script src="calendar.js"></script>
+  </head>
+  <body onload="printClock(),addAlClock(),checkAL()">
+    <section id="Reminder">
+      <section id="cal-wrap">      
+        <!-- 날짜 선택섹션 -->
+        <section id="cal-date">
+          <select id="cal-mth"></select>
+          <select id="cal-yr"></select>
+          <input id="cal-set" type="button" value="이동"/>
+          <input id="cal-today" type="button" value="오늘은?"/>        
+        </section>
+
+        <!-- [달력 섹션] -->
+        <section id="cal-container"></section>          
+
+        <!-- [이벤트 섹션] -->
+        <section id="cal-event"></section>
+      </section>    
+
+      <!-- [시계 섹션] -->
+      <section id="clock-wrap">
+        <section id="clock"></section>
+        <input id="scheduleRefresh" type="button" value="일정로드" onclick="loadTodaySchedule()"/><br>
+        <p id="scheduleHeader">오늘 일정은?</p>
+        <hr>
+        <table id="schedule-table"></table>
+      </section>
+
+      <!-- [알람 섹션] -->
+      <section id="aLClock-wrap">
+          <section id="alClock-header">
+            <select id="AMPM"></select> 
+            <select id="al-hour"></select>시
+            <select id="al-min"></select>분<br>
+            <p>알람메모</p>            
+            <textarea id="al-memo"></textarea>
+          </section>  
+
+          <input id="addAL" type="button" onclick="addAL()" value="알람추가">
+          <table id="al-table">
+            <th>
+              <tr class="ALhead">
+                <td class="ALhead_time">시간</td>
+                <td class="ALhead_sc">알람 메모</td>
+                <td class="ALhead_del">삭제</td>
+              </tr>
+            </th>
+          </table>
+          <p id="al-memo-post"></p>          
+      </section>
+    </section>
+  </body>
+</html>
